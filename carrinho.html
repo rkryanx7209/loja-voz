@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEEKZONE — Carrinho</title>
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/carrinho.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🎮</span>
+        <h1>GEEK<span>ZONE</span></h1>
+      </a>
+      <a href="index.html" class="btn btn-outline">← Continuar comprando</a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="container">
+    <h2 class="titulo-pagina">🛒 Meu Carrinho</h2>
+
+    <!-- CARRINHO COM ITENS -->
+    <div class="carrinho-layout" id="carrinhoLayout">
+      <div class="lista-carrinho" id="listaCarrinho"></div>
+
+      <aside class="resumo-carrinho">
+        <h3>Resumo do Pedido</h3>
+
+        <div class="linha-resumo">
+          <span>Subtotal</span>
+          <span id="subtotal">R$ 0,00</span>
+        </div>
+
+        <div class="linha-resumo">
+          <span>Frete</span>
+          <span id="frete">R$ 0,00</span>
+        </div>
+
+        <div class="linha-resumo total">
+          <span>Total</span>
+          <span id="total">R$ 0,00</span>
+        </div>
+
+        <a href="checkout.html" class="btn btn-green btn-full" id="btnCheckout">
+          Finalizar Compra →
+        </a>
+
+        <button class="btn btn-outline btn-full" id="btnLimpar" style="margin-top:10px;">
+          🗑️ Limpar Carrinho
+        </button>
+      </aside>
+    </div>
+
+    <!-- CARRINHO VAZIO -->
+    <div class="carrinho-vazio hidden" id="carrinhoVazio">
+      <div class="vazio-icon">🛒</div>
+      <h3>Seu carrinho está vazio</h3>
+      <p>Adicione produtos e volte aqui para finalizar a compra.</p>
+      <a href="index.html" class="btn btn-full">🛍️ Ver produtos</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2026 GEEKZONE — Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/js/carrinho.js"></script>
+</body>
+</html>

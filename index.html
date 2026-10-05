@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEEKZONE — Loja Geek</title>
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/voz.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🎮</span>
+        <h1>GEEK<span>ZONE</span></h1>
+      </a>
+
+      <div class="search-bar">
+        <input type="text" id="busca" placeholder="🔍 Buscar produtos...">
+      </div>
+
+      <a href="carrinho.html" class="cart-btn">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Os melhores produtos <span>geek</span> do Brasil</h2>
+      <p>Informática, colecionáveis, games e muito mais!</p>
+      <a href="#produtos" class="btn-hero">Ver produtos ↓</a>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filtros" id="produtos">
+    <button class="filtro-btn ativo" data-cat="todos">🎯 Todos</button>
+    <button class="filtro-btn" data-cat="informatica">💻 Informática</button>
+    <button class="filtro-btn" data-cat="colecionaveis">🎁 Colecionáveis</button>
+    <button class="filtro-btn" data-cat="games">🎮 Games</button>
+    <button class="filtro-btn" data-cat="acessorios">🎧 Acessórios</button>
+  </section>
+
+  <!-- GRID DE PRODUTOS -->
+  <main class="container">
+    <div class="grid-produtos" id="gridProdutos"></div>
+    <p class="empty-msg hidden" id="emptyMsg">😢 Nenhum produto encontrado.</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>🎮 GEEKZONE</h3>
+        <p>A melhor loja geek do Brasil.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html">Início</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="checkout.html">Checkout</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="contato.html">Contato</a>
+        <p>contato@geekzone.com.br</p>
+        <p>(11) 99999-9999</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 GEEKZONE — Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- 🎤 BOTÃO FLUTUANTE DE VOZ -->
+  <button class="voz-flutuante" id="vozBtn" onclick="ouvir()" title="Buscar por voz">
+    🎤
+  </button>
+
+  <!-- 🎤 MODAL DE VOZ -->
+  <div class="voz-modal hidden" id="vozModal">
+    <div class="voz-modal-content">
+      <div class="voz-icon">🎤</div>
+      <h3>Estou ouvindo...</h3>
+      <p class="voz-subtitulo">Diga um comando ou nome de produto</p>
+      <div class="voz-transcricao" id="vozResposta">...</div>
+      <button class="btn" onclick="fecharVoz()">Cancelar</button>
+    </div>
+
+  <div class="toast" id="toast">✅ Produto adicionado!</div>
+
+  <script type="module" src="src/js/index.js"></script>
+  <script src="src/js/voz.js"></script>
+</body>
+</html>

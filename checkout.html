@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEEKZONE — Checkout</title>
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/checkout.css">
+  <link rel="stylesheet" href="src/css/assistente.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🎮</span>
+        <h1>GEEK<span>ZONE</span></h1>
+      </a>
+      <a href="carrinho.html" class="btn btn-outline">← Voltar ao carrinho</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="titulo-pagina">💳 Finalizar Compra</h2>
+
+    <div class="checkout-layout">
+      <form class="form-checkout" id="formCheckout">
+        <h3>📦 Dados de Entrega</h3>
+
+        <label>Nome Completo</label>
+        <input type="text" id="nome" placeholder="Ex.: João Silva" required>
+
+        <label>E-mail</label>
+        <input type="email" id="email" placeholder="joao@email.com" required>
+
+        <label>Telefone</label>
+        <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+
+        <label>Endereço Completo</label>
+        <input type="text" id="endereco" placeholder="Rua, número, complemento" required>
+
+        <label>Cidade / Estado</label>
+        <input type="text" id="cidade" placeholder="São Paulo / SP" required>
+
+        <h3>💳 Forma de Pagamento</h3>
+
+        <div class="pagamento-opcoes">
+          <label class="pagamento-card">
+            <input type="radio" name="pagamento" value="Pix" id="pagPix" checked>
+            <span>📱 Pix</span>
+          </label>
+          <label class="pagamento-card">
+            <input type="radio" name="pagamento" value="Cartão" id="pagCartao">
+            <span>💳 Cartão</span>
+          </label>
+          <label class="pagamento-card">
+            <input type="radio" name="pagamento" value="Boleto" id="pagBoleto">
+            <span>📄 Boleto</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-green btn-full">
+          ✅ Finalizar Pedido
+        </button>
+      </form>
+
+      <aside class="resumo-final">
+        <h3>Resumo do Pedido</h3>
+        <div id="itensResumo"></div>
+        <div class="linha-resumo total">
+          <span>Total</span>
+          <span id="totalFinal">R$ 0,00</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 🤖 BOTÃO DO ASSISTENTE -->
+  <button class="assistente-btn" id="assistenteBtn" onclick="abrirAssistentePagamento()" title="Assistente de Pagamento por Voz">
+    🤖
+  </button>
+
+  <!-- 🎤 MODAL DO ASSISTENTE -->
+  <div class="voz-modal hidden" id="vozModal">
+    <div class="voz-modal-content">
+      <div class="voz-icon">🤖</div>
+      <h3 id="vozTitulo">Assistente de Pagamento</h3>
+      <p class="voz-subtitulo" id="vozSubtitulo">Vou te ajudar a preencher</p>
+      <div class="voz-transcricao" id="vozResposta">...</div>
+      <button class="btn" onclick="fecharAssistentePagamento()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Modal de sucesso -->
+  <div class="modal hidden" id="modalSucesso">
+    <div class="modal-content">
+      <div class="modal-icon">🎉</div>
+      <h2>Pedido Confirmado!</h2>
+      <p>Obrigado pela sua compra, <b id="nomeCliente"></b>!</p>
+      <p class="mut">Você receberá um e-mail com os detalhes.</p>
+      <a href="index.html" class="btn btn-green btn-full">Voltar à Loja</a>
+    </div>
+  </div>
+
+  <script type="module" src="src/js/checkout.js"></script>
+  <script src="src/js/assistente.js"></script>
+</body>
+</html>
